@@ -1,3 +1,4 @@
+(comment "Clojure solution to SICP exercise 1.18")
 (defn multiply [a b]
   (defn mydouble [x] (+ x x))
   (defn even? [x]

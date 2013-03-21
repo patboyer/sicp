@@ -1,3 +1,4 @@
+(comment "Clojure solution to SICP exercise 1.17")
 (defn fast-mult [a b]
   (defn double [x] (+ x x))
   (defn even? [x] 

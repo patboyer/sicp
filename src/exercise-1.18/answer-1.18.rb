@@ -1,5 +1,9 @@
 #!/usr/bin/ruby -w
 
+=begin
+Ruby solution to SICP exercise 1.18
+=end
+
 require 'test/unit'
 
 def double(x)

@@ -2,6 +2,10 @@
 
 require 'test/unit'
 
+=begin
+Ruby solution to SICP exercise 1.12
+=end
+
 class Pascal
   def self.calculate_node(row, col)
     if ( (col < 0) or (col > row) )

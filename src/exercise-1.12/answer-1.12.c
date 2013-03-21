@@ -1,3 +1,5 @@
+/* C Solution to SICP exercise 1.12 */
+
 #include <stdio.h>
 #include "../minunit.h"
 

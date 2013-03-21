@@ -1,3 +1,4 @@
+(comment "Clojure solution to SICP exercise 1.12")
 (ns sicp.chapter1 
   (:use clojure.test))
 

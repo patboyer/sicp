@@ -2,6 +2,10 @@
 
 require 'test/unit'
 
+=begin
+Ruby solution to SICP exercise 1.17
+=end
+
 def double(x)
   x + x
 end

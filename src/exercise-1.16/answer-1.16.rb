@@ -2,6 +2,10 @@
 
 require 'test/unit'
 
+=begin
+Ruby solution to SICP exercise 1.16
+=end
+
 def exponential(base, exp)
   result = 1
 
