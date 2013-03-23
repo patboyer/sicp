@@ -4,6 +4,7 @@
 Ruby solution to SICP exercise 1.22
 =end
 
+require 'benchmark'
 require 'test/unit'
 
 class Integer
@@ -98,14 +99,29 @@ class TestDivisor < Test::Unit::TestCase
     assert(  find_primes(10000).include?(10037))
     
     assert(! find_primes(100000).include?(100000))
+    assert(  find_primes(100000).include?(100003))
     assert(  find_primes(100000).include?(100019))
     assert(  find_primes(100000).include?(100043))
-    assert(  find_primes(100000).include?(100003))
 
     assert(! find_primes(1000000).include?(1000000))
     assert(  find_primes(1000000).include?(1000003))
     assert(  find_primes(1000000).include?(1000033))
     assert(  find_primes(1000000).include?(1000037))
+  end
+end
+
+Benchmark.bm do |x|
+  primes = [
+       1009,    1013,    1019,
+      10007,   10009,   10037, 
+     100003,  100019,  100043, 
+    1000003, 1000033, 1000037
+  ]
+
+  primes.each do |i|
+    x.report(i.to_s.ljust(9)) do
+      1000.times { i.prime? }
+    end
   end
 end
 
