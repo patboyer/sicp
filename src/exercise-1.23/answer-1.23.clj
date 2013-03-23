@@ -21,18 +21,21 @@
 (defn prime? [n]
   (= n (smallest-divisor n)))
 
-(defn timed-prime-test [n]
-  (newline)
-  (prn n)
-  (start-prime-test n (runtime)))
-
-(defn start-prime-test [n start-time]
-  (if (prime? n)
-      (report-prime (- (runtime) start-time))))
+(time (prime? 19999))
 
 (defn report-prime [elapsed-time]
   (prn " *** ")
   (prn elapsed-time))
+
+(defn start-prime-test [n start-time]
+  (if (prime? n)
+      (report-prime (- (time) start-time))))
+
+(defn timed-prime-test [n]
+  (newline)
+  (prn n)
+  (start-prime-test n (time)))
+  )
 
 (comment
 (smallest-divisor 199)   =>  199
