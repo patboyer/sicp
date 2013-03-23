@@ -2,6 +2,7 @@
 
 #include <stdbool.h>
 #include <stdlib.h>
+#include <time.h>
 #include "../minunit.h"
 
 #define NUM_PRIMES 3
@@ -91,6 +92,37 @@ MU_TEST_SUITE(test_suite) {
 int main (int argc, char *argv[]) {
   MU_RUN_SUITE(test_suite);
   MU_REPORT();
+
+  int primes[] = {
+       1009,    1013,    1019,
+      10007,   10009,   10037, 
+     100003,  100019,  100043, 
+    1000003, 1000033, 1000037
+  };
+
+  int index = 0;
+  int primes_length = sizeof(primes) / sizeof(primes[0]);
+
+  printf("Beginning benchmarks ...\n");
+  
+  bool result;
+  clock_t t;
+  int num_runs = 1000;
+
+  while (index < primes_length) {
+    t = clock();
+    int i;
+    int this_prime;
+
+    for (i=1; i<=num_runs; i++) {
+      this_prime = primes[index];
+      result = is_prime(this_prime);
+    }
+  
+    t = clock() - t;
+    printf("%8d: %f seconds\n", this_prime, ((float)t)/CLOCKS_PER_SEC);
+    index++;
+  }
 
   return EXIT_SUCCESS;
 }
