@@ -14,3 +14,6 @@ java -cp clojure.jar clojure.main /path/to/clojure_file.clj
 To compile and execute a C file (example):
 gcc -o answer answer.c -lrt -lm
 
+Tests in C use 'minunit.h'
+https://github.com/siu/minunit
+
