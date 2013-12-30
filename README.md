@@ -3,8 +3,8 @@ SICP Exercises
 
 Practicing the problems in MIT's "Structure and Interpretation of Computer Programs (SICP)"
 
-I started working through SICP as a way to learn Clojure.
-I also worked some of the problems in C and Ruby for practice.
+I started working through SICP as a way to learn Clojure. I also work some problems in C and/or 
+Ruby for practice.
 
 I have only included the exercises that most interested me (usually programming problems).
 
