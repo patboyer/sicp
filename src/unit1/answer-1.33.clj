@@ -40,14 +40,14 @@
 
 (comment "----- Sum of Squares (Primes) -----")
 (comment "using Euclid's algorithm for GCD")
-(defn product-relative-primes [a n]
+(defn product-relative-primes [n]
   (defn gcd [x,y]
     (if (= 0 y)
       x
       (gcd y, (mod x y))))
   (defn relative-prime? [i]
     (= (gcd i n) 1))
-  (accumulate-filter identity a inc (- n 1) * 1 relative-prime?))
+  (accumulate-filter identity 1 inc (- n 1) * 1 relative-prime?))
 
 
 (comment "----- Tests -----")
@@ -81,9 +81,9 @@
   (is (= (sum-prime-squares 8 16) 290)))
 
 (deftest test-relative-primes
-  (is (= (product-relative-primes  1 10)               189))
-  (is (= (product-relative-primes 10 30)          30808063))
-  (is (= (product-relative-primes 25 50) 4692993764001543)))
+  (is (= (product-relative-primes 10)                 189))
+  (is (= (product-relative-primes 20)             8729721))
+  (is (= (product-relative-primes 30)           215656441)))
 
 (run-tests)
 
